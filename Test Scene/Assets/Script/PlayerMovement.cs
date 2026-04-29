@@ -4,6 +4,7 @@ namespace PrototypeGames
 {
     public class PlayerMovement : MonoBehaviour
     {
+        //頑張って
         #region References
 
         

@@ -4,16 +4,33 @@ namespace PrototypeGames
 {
     public class PlayerMovement : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        #region References
+
+        
+
+        #endregion
+
+        #region Variables
+
+        
+
+        #endregion
+
+        #region Functions
+
+        
+
+        #endregion
+
+        #region Start/Update
+        
         void Start()
         {
-        
         }
-
-        // Update is called once per frame
+        
         void Update()
         {
-        
         }
+        #endregion
     }
 }

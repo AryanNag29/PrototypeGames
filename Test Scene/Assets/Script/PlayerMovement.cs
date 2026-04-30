@@ -19,7 +19,7 @@ namespace PrototypeGames
         #endregion
 
         #region Variables
-        
+
         //imp variables
         private InputSystem_Actions _playerAction;
 
@@ -30,7 +30,7 @@ namespace PrototypeGames
         private Vector2 _input;
         private Vector3 _currentMovement;
         private bool isMovemntPressed;
-        
+
         //Rotation
         private Vector2 _inputRotation;
         private Vector3 _currentRotation;
@@ -39,6 +39,8 @@ namespace PrototypeGames
         #endregion
 
         #region Functions
+
+        #region GatherInput
 
         public void GatherInputOnMovement(InputAction.CallbackContext context)
         {
@@ -54,20 +56,30 @@ namespace PrototypeGames
             _currentRotation.x = _inputRotation.x;
             _currentRotation.y = _inputRotation.y;
         }
-        
+
         //Awake input
         private void InputAwake()
         {
             //movement
-            
+
             //keyboard invoke
             _playerAction.Player.Move.started += GatherInputOnMovement;
             //keyboard cancel
             _playerAction.Player.Move.canceled += GatherInputOnMovement;
             //gamepad
             _playerAction.Player.Move.performed += GatherInputOnMovement;
+        }
+
+        #endregion
+
+        #region Movement
+
+        private void PlayerMovementUpdate()
+        {
             
         }
+
+        #endregion
 
         #endregion
 
@@ -77,16 +89,21 @@ namespace PrototypeGames
         {
             controls = GetComponent<CharacterController>();
             _playerAction = new InputSystem_Actions();
-            
-            
-            
         }
 
         #endregion
 
         #region OnEnable/OnDisable
 
-        
+        private void OnEnable()
+        {
+            _playerAction.Player.Enable();
+        }
+
+        private void OnDisable()
+        {
+            _playerAction.Player.Disable();
+        }
 
         #endregion
 

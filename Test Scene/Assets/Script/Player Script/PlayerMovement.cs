@@ -97,12 +97,6 @@ namespace PrototypeGames
             _currentSpeed = Mathf.Clamp(_currentSpeed, 0, _playermaxSpeed);
         }
 
-        private void GatherMoveInput()
-        {
-            _moveInputx = _currentMovement.x;
-            _moveInputz = _currentMovement.z;
-        }
-
         #endregion
 
         #endregion
@@ -139,10 +133,9 @@ namespace PrototypeGames
 
         void Update()
         {
-            GatherMoveInput();
             CalculateSpeed();
             PlayerMovementUpdate();
-            Debug.Log(_input);
+            Debug.Log(_currentMovement);
         }
 
         #endregion

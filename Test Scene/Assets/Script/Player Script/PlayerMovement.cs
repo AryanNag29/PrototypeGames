@@ -31,7 +31,7 @@ namespace PrototypeGames
         private float _moveInputz;
         private Vector2 _input;
         private Vector3 _currentMovement;
-        private bool isMovemntPressed;
+        private bool isMovementPressed;
 
         //Rotation
         [Header("Rotation")] private Vector2 _inputRotation;
@@ -49,7 +49,7 @@ namespace PrototypeGames
             _input = context.ReadValue<Vector2>();
             _currentMovement.x = _input.x;
             _currentMovement.z = _input.y;
-            isMovemntPressed = _input.x != 0 || _input.y != 0;
+            isMovementPressed = _input.x != 0 || _input.y != 0;
         }
 
         protected void GatherInputOnRotation(InputAction.CallbackContext context)
@@ -85,11 +85,11 @@ namespace PrototypeGames
 
         private void CalculateSpeed()
         {
-            if (isMovemntPressed && _currentSpeed > 0)
+            if (isMovementPressed && _currentSpeed > 0)
             {
                 _currentSpeed -= _deaccelerationFactor * Time.deltaTime;
             }
-            else if (isMovemntPressed && _currentSpeed < _playermaxSpeed)
+            else if (isMovementPressed && _currentSpeed < _playermaxSpeed)
             {
                 _currentSpeed += _accelrationFactor * Time.deltaTime;
             }

@@ -62,6 +62,8 @@ namespace PrototypeGames
         //Awake input
         private void InputAwake()
         {
+            _playerAction = new InputSystem_Actions();
+            
             //movement
             //keyboard invoke
             _playerAction.Player.Move.started += OnMove;
@@ -69,6 +71,7 @@ namespace PrototypeGames
             _playerAction.Player.Move.canceled += OnMove;
             //gamepad
             _playerAction.Player.Move.performed += OnMove;
+            
         }
 
         #endregion
@@ -98,7 +101,6 @@ namespace PrototypeGames
         {
             _moveInputx = _currentMovement.x;
             _moveInputz = _currentMovement.z;
-            Debug.Log("x" + _moveInputx + "z" + _moveInputz);
         }
 
         #endregion
@@ -109,9 +111,8 @@ namespace PrototypeGames
 
         private void Awake()
         {
-            InputAwake();
             controls = GetComponent<CharacterController>();
-            _playerAction = new InputSystem_Actions();
+            InputAwake();
         }
 
         #endregion
@@ -141,7 +142,7 @@ namespace PrototypeGames
             GatherMoveInput();
             CalculateSpeed();
             PlayerMovementUpdate();
-            
+            Debug.Log(_input);
         }
 
         #endregion

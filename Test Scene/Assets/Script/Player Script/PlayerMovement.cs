@@ -67,7 +67,7 @@ namespace PrototypeGames
 
         private void PlayerMovementUpdate()
         {
-            // controls.Move(_currentMovement * _currentSpeed * Time.deltaTime);
+            controls.Move(_currentMovement * _currentSpeed * Time.deltaTime);
             
         }
 

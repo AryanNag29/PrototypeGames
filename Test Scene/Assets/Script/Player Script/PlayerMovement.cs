@@ -3,8 +3,10 @@ using System.Numerics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Input = UnityEngine.Windows.Input;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
+using System.Collections;
 
 namespace PrototypeGames
 {
@@ -24,7 +26,7 @@ namespace PrototypeGames
         private InputSystem_Actions _playerAction;
 
         [Header("Movement")] [SerializeField] private float _accelrationFactor = 5.0f;
-        [SerializeField] private float _deaccelerationFactor = 1;
+        [SerializeField] private float _deaccelerationFactor = 1f;
         [SerializeField] private float _playermaxSpeed = 5f;
         private float _currentSpeed;
         private float _moveInputx;
@@ -65,7 +67,8 @@ namespace PrototypeGames
 
         private void PlayerMovementUpdate()
         {
-            controls.Move(_currentMovement * _currentSpeed * Time.deltaTime);
+            // controls.Move(_currentMovement * _currentSpeed * Time.deltaTime);
+            
         }
 
         private void CalculateSpeed()

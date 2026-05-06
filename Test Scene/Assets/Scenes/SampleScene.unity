@@ -673,8 +673,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrototypeGames.PlayerMovement
   controls: {fileID: 1673397653}
-  _accelrationFactor: 10
-  _deaccelerationFactor: 1
+  _accelrationFactor: 20
+  _deaccelerationFactor: 2
   _playermaxSpeed: 50
 --- !u!143 &1673397653
 CharacterController:

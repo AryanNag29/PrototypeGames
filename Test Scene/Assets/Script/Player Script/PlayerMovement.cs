@@ -70,7 +70,7 @@ namespace PrototypeGames
             controls.Move(_currentMovement * _playermaxSpeed * Time.deltaTime);
             
         }
-
+        //これが悪いです
         private void CalculateSpeed()
         {
             if (isMovementPressed && _currentSpeed > 0)

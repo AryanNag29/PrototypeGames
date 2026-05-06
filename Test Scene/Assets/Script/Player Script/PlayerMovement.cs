@@ -59,21 +59,6 @@ namespace PrototypeGames
             _currentRotation.y = _inputRotation.y;
         }
 
-        //Awake input
-        private void InputAwake()
-        {
-            _playerAction = new InputSystem_Actions();
-            
-            //movement
-            //keyboard invoke
-            _playerAction.Player.Move.started += OnMove;
-            //keyboard cancel
-            _playerAction.Player.Move.canceled += OnMove;
-            //gamepad
-            _playerAction.Player.Move.performed += OnMove;
-            
-        }
-
         #endregion
 
         #region Movement
@@ -106,7 +91,16 @@ namespace PrototypeGames
         private void Awake()
         {
             controls = GetComponent<CharacterController>();
-            InputAwake();
+            // InputAwake();
+            _playerAction = new InputSystem_Actions();
+            
+            //movement
+            //keyboard invoke
+            _playerAction.Player.Move.started += OnMove;
+            //keyboard cancel
+            _playerAction.Player.Move.canceled += OnMove;
+            //gamepad
+            _playerAction.Player.Move.performed += OnMove;
         }
 
         #endregion

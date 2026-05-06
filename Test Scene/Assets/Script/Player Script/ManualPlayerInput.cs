@@ -38,7 +38,7 @@ namespace PrototypeGames
                 transform.Translate(-Vector3.right * _playermaxSpeed * Time.deltaTime);
             }
 
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 _playermaxSpeed *= _sprintfactor;
             }

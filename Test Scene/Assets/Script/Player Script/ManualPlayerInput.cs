@@ -56,11 +56,12 @@ namespace PrototypeGames
         {
             horizontal = Input.GetAxis("Mouse X") * rotationSmoothing;
             vertical = Input.GetAxis("Mouse Y") * speed;
-            Debug.Log(horizontal);
-            horizontal = Mathf.Clamp(1, -90f, 90f);
-
-
-            transform.Rotate(vertical, horizontal, 0f);
+            bool isrotation = horizontal != 0 || vertical != 0;
+            Debug.Log(isrotation);
+            if (isrotation)
+            {
+                transform.Rotate(vertical, horizontal, 0f);
+            }
         }
 
         #endregion

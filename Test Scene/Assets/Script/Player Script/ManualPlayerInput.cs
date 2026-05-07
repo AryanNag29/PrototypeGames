@@ -7,14 +7,13 @@ namespace PrototypeGames
     {
         #region Variables
 
-        [Header("Movement")]
-        [SerializeField] private float _playermaxSpeed = 5f;
+        [Header("Movement")] [SerializeField] private float _playermaxSpeed = 5f;
         private float _sprintfactor = 2f;
         private float storePlayerSpeed;
-        [Header("Rotation")] private  float horizontal;
-        private  float vertical;
-        [SerializeField] private float speed = 10f;
-        [SerializeField] private float rotationSmoothing = 10f;
+        [Header("Rotation")] private float horizontal;
+        private float vertical;
+        [SerializeField] private float speed = 2f;
+        [SerializeField] private float rotationSmoothing = 2f;
         // private Vector3 direction = new Vector3(horizontal, vertical, 0f);
 
         #endregion
@@ -23,7 +22,6 @@ namespace PrototypeGames
 
         private void PlayerMovementUpdate()
         {
-            
             if (Input.GetKey(KeyCode.W))
             {
                 transform.Translate(Vector3.forward * _playermaxSpeed * Time.deltaTime);
@@ -56,17 +54,17 @@ namespace PrototypeGames
 
         private void PlayerRotationUpdate()
         {
-            horizontal = Input.GetAxis("Mouse X")* rotationSmoothing;
+            horizontal = Input.GetAxis("Mouse X") * rotationSmoothing;
             vertical = Input.GetAxis("Mouse Y") * speed;
             Debug.Log(horizontal);
             horizontal = Mathf.Clamp(1, -90f, 90f);
-            
+
 
             transform.Rotate(vertical, horizontal, 0f);
         }
 
         #endregion
-        
+
         // float mouseX = Input.GetAxis("Mouse X");
         // // Debug.Log(mouseX);
         // horizontal = Input.GetAxis("Horizontal");
@@ -84,7 +82,6 @@ namespace PrototypeGames
         void Start()
         {
             storePlayerSpeed = _playermaxSpeed;
-            
         }
 
         // Update is called once per frame

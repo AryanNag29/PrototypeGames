@@ -57,7 +57,7 @@ namespace PrototypeGames
             horizontal = Input.GetAxis("Mouse X") * rotationSmoothing;
             vertical = Input.GetAxis("Mouse Y") * speed;
             bool isrotation = horizontal != 0 || vertical != 0;
-            Debug.Log(isrotation);
+            // Debug.Log(isrotation);
             if (isrotation)
             {
                 transform.Rotate(vertical, horizontal, 0f);

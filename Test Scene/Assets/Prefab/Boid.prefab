@@ -30,13 +30,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2706304764624774277}
   serializedVersion: 2
-  m_LocalRotation: {x: 1.110223e-17, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -5.251047, y: 1.1697726, z: -6.923228}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &8380450370778106165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,3 +985,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0d22f65c81fd541ba5202db9dc3d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrototypeGames.Boid
+  position: {x: 0, y: 0, z: 0}
+  forward: {x: 0, y: 0, z: 0}
+  avgFlockHeading: {x: 0, y: 0, z: 0}
+  avgAvoidHeading: {x: 0, y: 0, z: 0}
+  centerofFlockmates: {x: 0, y: 0, z: 0}
+  numPerceivedFlockmates: 0

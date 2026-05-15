@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace PrototypeGames
 {
+    [CreateAssetMenu]
     public class BoidSettings : ScriptableObject
     {
         #region Variables

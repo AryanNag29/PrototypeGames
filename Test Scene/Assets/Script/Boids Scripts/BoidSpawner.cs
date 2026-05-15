@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace PrototypeGames
 {
@@ -29,6 +31,21 @@ namespace PrototypeGames
         public Color colour;
         public float gizmosVisiblity = 0.3f;
         public GismozType showSpawnRegion;
+
+        #endregion
+
+        #region Awake
+
+        private void Awake()
+        {
+            for (int i = 0; i < spawnCount; i++)
+            {
+                Vector3 pos = transform.position + Random.insideUnitSphere * spawnRadius;
+                Boid boid = Instantiate(prefab);
+                boid.transform.position = pos;
+                boid.transform.forward = Random.insideUnitSphere;
+            }
+        }
 
         #endregion
 
